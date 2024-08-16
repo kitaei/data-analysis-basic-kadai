@@ -1,0 +1,22 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig, axes = plt.subplots(2, 3, tight_layout=True)
+
+y0 = [1, 2, -5, 2]
+axes[0,0].plot(y0)
+
+x = np.linspace(0, 10, 100)
+y = 2 + 2 * np.sin(2 * x)
+axes[0, 1].plot(x, y)
+
+x_hist = np.random .normal(15, 5 , 2000)
+plt.xlim(-10, 40)
+axes[0, 2].hist(x_hist, bins=30)
+
+np.random.seed(3)
+x_scatter = 4 + np.random.normal(0, 2, 60)
+y_scatter = 4 + np.random.normal(0, 2, 60)
+axes[1, 0].scatter(x_scatter, y_scatter)
+
+plt.show()
